@@ -6,7 +6,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Input,
+  Input
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
@@ -37,10 +37,16 @@ const Topic = ({ data }) => {
           { option: correct, isCorrect: true },
           { option: wrongOption1, isCorrect: false },
           { option: wrongOption2, isCorrect: false },
-          { option: wrongOption3, isCorrect: false },
-        ],
+          { option: wrongOption3, isCorrect: false }
+        ]
       };
       postData(data, obj);
+      toggleModal(false);
+      setQuestion("");
+      setCorrect("");
+      setWrongOption1("");
+      setWrongOption2("");
+      setWrongOption3("");
     }
   };
   return (
@@ -48,17 +54,19 @@ const Topic = ({ data }) => {
       <div className="mt-lg">
         {Object.keys(data).length > 0 && (
           <>
-            <h1 className="text-center">
+            <h1 className="huge">
               <Link to="/">
                 <i className="fas fa-long-arrow-alt-left"></i>
               </Link>
               {data.title}
             </h1>
-            <p className="text-center lead">{data.description}</p>
+            <p className="text-center text-lg">{data.description}</p>
             <Link className="a-tag" to="/quiz">
-              <Button className="mr-2">Go to Quiz</Button>
+              <Button className="mr-2 btn">Go to Quiz</Button>
             </Link>
-            <Button onClick={toggleModal}>Add Question</Button>
+            <Button className="btn" onClick={toggleModal}>
+              Add Question
+            </Button>
             <Modal isOpen={modal}>
               <ModalHeader toggle={toggleModal}>Add a question</ModalHeader>
               <ModalBody>

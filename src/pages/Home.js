@@ -12,7 +12,7 @@ const Home = (props) => {
   return (
     <Container>
       <div className="m-5">
-        <h1>Quizzler</h1>
+        <h1 className="huge">Quizzler</h1>
       </div>
       <Container>
         <Row>

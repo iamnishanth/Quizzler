@@ -45,7 +45,7 @@ const Quiz = ({ data }) => {
     <Container className="wrapper">
       {!showResult && (
         <>
-          <h1>{data[currentIndex].question}</h1>
+          <h1 className="bold">{data[currentIndex].question}</h1>
           <Row>
             {data[currentIndex].answerOptions.map((item) => {
               return (
@@ -70,8 +70,12 @@ const Quiz = ({ data }) => {
       )}
       {showResult && (
         <>
-          <h1>Your score is {currentScore}</h1>
-          <Link to="/topic">Go back</Link>
+          <h1 className="text-center">
+            Your score is {currentScore} out of {data.length * 10}
+          </h1>
+          <Link to="/topic">
+            <Button>Go back</Button>
+          </Link>
         </>
       )}
     </Container>

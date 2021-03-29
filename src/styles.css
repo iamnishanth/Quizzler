@@ -39,8 +39,49 @@ body {
   margin-bottom: 10px;
 }
 
+.huge {
+  font-size: 82px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 34px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #7d4cdb;
+  transition: all 100ms ease-in;
+  border: 1.5px solid black !important;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #7d4cdb;
+  border: 0;
+}
+
+.btn:focus,
+.btn:active {
+  background-color: #7d4cdb !important;
+}
+
 @media screen and (max-width: 778px) {
   .mt-lg {
     margin-top: 75px;
+  }
+
+  .huge {
+    font-size: 64px;
+  }
+
+  .text-lg {
+    font-size: 22px;
+    text-align: justify !important;
   }
 }
